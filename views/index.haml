@@ -1,0 +1,26 @@
+%div.image{:style => "background-image: url(#{@album.cover_image_url})"}
+  %h2
+    %span.band{:style => "font: bold 32px/48px '#{@album.band_font}', Helvetica, Sans-Serif"}
+      = @album.band_name
+  %h2
+    %span.title{:style => "font: bold 24px/32px '#{@album.title_font}', Helvetica, Sans-Serif"}
+      = @album.title
+
+%p
+  %a{:href => @album.cover_image_photopage} Image Source
+  %br
+  %a{:href => "http://en.wikipedia.org/wiki/#{@album.band_name}"} Band Name
+  (via
+  %a{:href => RANDOM_WIKIPEDIA_ARTICLE_URL}= RANDOM_WIKIPEDIA_ARTICLE_URL
+  )
+  %br
+  %a{:href => "#{@album.title_quote_url}"} Album Title Source
+  (via 
+  %a{:href => RANDOM_QUOTATION_URL}= RANDOM_QUOTATION_URL
+  )
+
+%p
+  %a{:href => "/album/#{@album.id}"} Permalink
+  
+%p
+  %a{:href => "/"} Give me another!

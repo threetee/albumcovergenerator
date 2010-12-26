@@ -1,0 +1,21 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title
+      = @title || 'Album Cover Generator'
+    %script{:type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"}
+    :javascript
+      WebFont.load({
+        google: {
+          families: [ '#{@album.band_font}', '#{@album.title_font}' ]
+        }
+      });
+    
+    %link{:rel => "stylesheet", :href => "/css/reset.css", :type => "text/css", :media => "all"}
+    %link{:rel => "stylesheet", :href => "/css/960.css", :type => "text/css", :media => "all"}
+    %link{:rel => "stylesheet", :href => "/css/text.css", :type => "text/css", :media => "all"}
+    %link{:rel => "stylesheet", :href => "/css/application.css", :type => "text/css", :media => "all"}
+  %body
+    %div#container
+      %h1 Album Cover Generator
+      = yield
