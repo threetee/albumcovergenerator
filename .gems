@@ -1,1 +1,8 @@
 sinatra
+haml
+sass
+json
+nokogiri
+open-uri
+flickraw-cached
+mongo_mapper
